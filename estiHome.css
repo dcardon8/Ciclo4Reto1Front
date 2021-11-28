@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#LOGO{
+    height: 100px;
+    position: relative;
+}
+
+#contenedor{
+    width: 950px;
+    margin: auto;
+}
+
+header{
+    width: 950px;
+    height: 100px;
+    background: #003448;
+}
+
+header h1{
+    text-align: center;
+    color: white;
+    line-height: 100px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+/*
+Para los formularios
+*/
+
+label {
+    margin: 0 12px;
+}
+
+form{
+    position: relative;
+    margin-top: 130px;
+    margin-left: 35%;
+}
+
+.registerButtons{
+    width: 100px;
+    color: white;
+    background: #003448;
+    border-radius: 4px;
+    margin-left: 180px;
+    margin-bottom: 20px;
+}
+
+/*
+Para el H2 de las tablas
+*/
+h2 {
+    margin: 57px 0px 25px; 
+    color: white;
+}
+
+body{
+    background-image: url();
+    background-size: cover;
+}
+
+nav{
+    max-width: inherit;
+    margin: auto;
+    background-color: #333;
+    font-size: 15px;
+}
+
+.menu-horizontal{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-horizontal > li > a{
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu-horizontal > li:hover{
+    background-color: red;
+}
+
+.menu-vertical{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.menu-horizontal li:hover .menu-vertical{
+    display: block;
+}
+
+.menu-vertical li:hover{
+    background-color: black;
+}
+
+.menu-vertical li a{
+    display: block;
+    color: white;
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+}

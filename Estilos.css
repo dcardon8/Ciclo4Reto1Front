@@ -3,6 +3,12 @@
     margin: 10px 10px;
 }
 
+.Logo {
+    height: inherit;
+    height: 100px;
+    margin: 0 20px;
+}
+
 h1 {
     color: darkturquoise;
     text-align: center;
