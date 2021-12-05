@@ -49,10 +49,38 @@
         </nav>
     </div>
 
+    <div class="updateFields"> 
+        <form>
+            
+            <table>
+                <caption class="col-3 offset-xl-5">¿Actualizar datos?</caption>       
+                <tr>
+                    <td><input type="text" name="ReferenceText" id="ReferenceText" class="form-control" placeholder="Referencia" required></td>
+                    <td><input type="text" name="CategoryText" id="CategoryText" class="form-control" placeholder="Categoria" required></td>
+                    <td><input type="text" name="SizeText" id="SizeText" class="form-control" placeholder="Talla" required></td>
+                    <td><input type="text" name="DescriptionText" id="DescriptionText" class="form-control" placeholder="Descripción" required> </td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="AvailabilityText" id="AvailabilityText" class="form-control"
+                        list="DisponibilidadList" placeholder="Disponibilidad" required></td> <!--  list="DisponibilidadList" -->
+                    <td><input type="number" name="PriceText" id="PriceText" class="form-control" placeholder="Precio" required></td>
+                    <td><input type="number" name="StockText" id="StockText" class="form-control" placeholder="Cantidad" required></td>
+                    <td><input type="url" name="Fotografía" id="Fotografía" class="form-control"
+                        placeholder="https://example.com" pattern="https://.*" required></td>
+                </tr>
+            </table>
+            <datalist id="DisponibilidadList">
+                <option value="true">Sí</option>
+                <option value="false">No</option>
+            </datalist>
+            <br>  
+        </form>
+    </div>
+
     <div class="tituloTabla">
         <h2>Usuarios</h2>
     </div>
-    <div class="col-12 col-lg-6 col-xl-7 offset-xl-1 conte1">
+    <div class="col-12 col-lg-8 col-xl-7 offset-xl-1 conte1">
         <div class="table-responsive">
             <table class="table tablaDiseño">
                 <thead>

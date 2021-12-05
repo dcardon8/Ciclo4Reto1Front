@@ -17,7 +17,7 @@
     <!--Usar JQUERY-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Usar mi archivo de JS-->
-    <script src="script2.js"></script>
+    <script src="scriptNewUser.js"></script>
     <!-- PARA USAR MI LOGO arriba en el navegador-->
     <link rel="icon" href="ALTO TUMERQUE.png" type="image/icon type">
 
@@ -60,7 +60,7 @@
     <br>
     <br> -->
     
-    <form action="" method="post" class="form">
+    <form>
         <table>
             <tr>
                 <td><label for="IdUser">Id</label></td>
@@ -84,7 +84,7 @@
             </tr>
             <tr>
                 <td><label for="Email">E-mail</label></td>
-                <td><input type="text" name="Email" id="emailNewUser" class="form-control" required></td>
+                <td><input type="email" name="Email" id="emailNewUser" class="form-control" required></td>
             </tr>
             <tr>
                 <td><label for="Password">Contraseña</label></td>
@@ -125,7 +125,7 @@
         </table>
         <br>
         <div class="Center">
-            <button class="registerButtons" onclick="registrarNuevoUsuario()">Crear</button>
+            <button class="btn btn-dark btn-lg action-button col-2 offset-xl-1" onclick="create()">Crear</button>
         </div>
         
     </form>

@@ -49,6 +49,54 @@
         </nav>
     </div>
 
+    <div class="updateFields"> 
+        <form>
+            
+            <table>
+                <caption class="col-3 offset-xl-5">¿Actualizar datos?</caption>       
+                <tr>
+                    <td><input type="text" name="IdentificationText" id="IdentificationText" class="form-control" placeholder="Identificación" required> </td>
+                    <td><input type="text" name="NameText" id="NameText" class="form-control" placeholder="Nombre" required></td>
+                    <td><input type="text" name="AddresText" id="AddressText" class="form-control" placeholder="Dirección" required></td>
+                    <td><input type="tel" name="cellPhoneText" id="cellPhoneText" class="form-control" pattern="[0-9]{10}" maxlength="10"  placeholder="Celular" required></td>
+                </tr>
+                <tr>
+                    <td><input type="email" name="EmailText" id="EmailText" class="form-control" placeholder="Email" required></td>
+                    <td><input type="password" id="contraNuevo1" pattern=".{6,}" class="form-control" placeholder="Contraseña" required></td>
+                    <td><input type="text" name="ZonaText" id="ZonaText" class="form-control" list="ZonasTurmeque" placeholder="Zona" required></td>
+                    <td><input type="text" name="RolText" id="RolText" class="form-control" list="RolList" placeholder="Tipo" required></td>
+                </tr>
+            </table>
+            <br>
+        </form>
+    </div>
+    
+    <datalist id="ZonasTurmeque">
+        <option value="ZONA 1"></option>
+        <option value="ZONA 2"></option>
+        <option value="ZONA 3"></option>
+        <option value="ZONA 4"></option>
+        <option value="ZONA 5"></option>
+        <option value="ZONA 6"></option>
+        <option value="ZONA 7"></option>
+        <option value="ZONA 8"></option>
+        <option value="ZONA 9"></option>
+        <option value="ZONA 10"></option>
+        <option value="ZONA 11"></option>
+        <option value="ZONA 12"></option>
+        <option value="ZONA 13"></option>
+        <option value="ZONA 14"></option>
+        <option value="ZONA 15"></option>
+        <option value="ZONA 16"></option>
+        <option value="ZONA 17"></option>
+    </datalist>
+    
+    <datalist id="RolList">
+        <option value="COORD">Coordinador</option>
+        <option value="ASE">Asesor Comercial</option>
+        <option value="ADM">Administrador</option>
+    </datalist>
+
     <div class="tituloTabla">
         <h2>Usuarios</h2>
     </div>

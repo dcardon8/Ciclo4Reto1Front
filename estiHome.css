@@ -39,7 +39,22 @@ label {
 form{
     position: relative;
     margin-top: 130px;
-    margin-left: 35%;
+}
+
+caption { 
+    display: table-header-group;
+    text-align: center;
+    font-size: larger;
+  }
+
+.updateFields{
+    margin-top: 120px;
+}
+
+.formUpdate{
+    position: relative;
+    margin-top: auto;
+    margin-left: 20%;
 }
 
 .registerButtons{
@@ -55,8 +70,7 @@ form{
 Para el H2 de las tablas
 */
 h2 {
-    margin: 57px 0px 25px; 
-    color: white;
+    color: black;
 }
 
 body{

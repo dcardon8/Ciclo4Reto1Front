@@ -5,8 +5,8 @@
     let respuesta = new XMLHttpRequest();
     let emailUser = $("#emailUser").val();
     let passw = $("#password").val();
-    let url = 'http://localhost:8080/api/user/' + emailUser + "/" + passw;
-    /* let url = 'http://129.151.98.9:8080/api/user/' + emailUser + "/" + passw; */
+    /*let url = 'http://localhost:8080/api/user/' + emailUser + "/" + passw;*/
+    let url = 'http://129.151.98.9:8080/api/user/' + emailUser + "/" + passw;
 
     if (emailUser != "" && passw != "") {
         respuesta.open('GET', url);
@@ -15,7 +15,7 @@
             if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
                 let respuestaJson = JSON.parse(this.responseText);
                 console.log(respuestaJson["name"]);
-                if (respuestaJson["name"] != "NO DEFINIDO") {
+                if (respuestaJson["name"] != null) {
                     alert("Bienvenido " + respuestaJson["name"]);
                     window.location.href = "home.html";
                 } else {
@@ -29,6 +29,9 @@
     }
 }
 
+
+
+
 /**
  * Función para Validar campos y crear nueva cuenta de usuario
  */
@@ -40,8 +43,10 @@ function registrarNuevoUsuario() {
 
     if (document.getElementById("nameNewUser").value == "") {
         alert("campo de nombre está vacío");
-    } else if (document.getElementById("emailNewUser").value == "") {
-        alert("campo de e-mail está vacío");
+    } else if (document.getElementById("emailNewUser").value == "" || document.getElementById("identification").value == ""
+     || document.getElementById("UserAddress").value == "" || document.getElementById("cellPhone").value == ""
+     || document.getElementById("Zona").value == "" || document.getElementById("Rol").value == "" || $("#identification").val() == "") {
+        alert("diligencie todos los campo");
     } else if (boolEmail == true) {
         if ((contra1.length < 6) == true || (contra2.length < 6) == true) {
             alert("las contraseñas deben tener por lo menos 6 caracteres");
@@ -50,8 +55,8 @@ function registrarNuevoUsuario() {
 
                 let respuesta = new XMLHttpRequest();
                 let emailUser = $("#emailNewUser").val();
-                let url = 'http://localhost:8080/api/user/' + emailUser;
-                /* let url = 'http://129.151.98.9:8080/api/user/' + emailUser; */
+                /* let url = 'http://localhost:8080/api/user/emailexist/' + emailUser; */
+                let url = 'http://129.151.98.9:8080/api/user/emailexist/' + emailUser;
                 respuesta.open('GET', url);
                 respuesta.onreadystatechange = function () {
                     if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
@@ -64,15 +69,15 @@ function registrarNuevoUsuario() {
                             let respuesta = new XMLHttpRequest();
                             let emailUser = $("#emailNewUser").val();
                             let passw = $("#password").val();
-                            let url = 'http://localhost:8080/api/user/' + emailUser + "/" + passw;
-                            /* let url = 'http://129.151.98.9:8080/api/user/' + emailUser + "/" + passw; */
+                            /* let url = 'http://localhost:8080/api/user/' + emailUser + "/" + passw; */
+                            let url = 'http://129.151.98.9:8080/api/user/' + emailUser + "/" + passw; 
                             respuesta.open('GET', url);
 
                             respuesta.onreadystatechange = function () {
                                 if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
                                     let respuestaJson = JSON.parse(this.responseText);
                                     console.log(respuestaJson["name"]);
-                                    if (respuestaJson["name"] != "NO DEFINIDO") {
+                                    if (respuestaJson["name"] != null) {
                                         alert("No fue posible crear la cuenta");
                                     } else {
                                         newUser();
@@ -99,18 +104,22 @@ function registrarNuevoUsuario() {
  */
  function newUser() {
     let myData = {
+        id: $("#IdUser").val(),
         identification: $("#identification").val(),
         name: $("#nameNewUser").val(),
         address: $("#UserAddress").val(),
         cellPhone: $("#cellPhone").val(),
         email: $("#emailNewUser").val(),
+        password: $("#contraNuevo1").val(),
         zone: $("#Zona").val(),
-        password: $("#contraNuevo1").val()
+        type: $("#Rol").val()
     }
 
+    console.log(myData);
+
     $.ajax({
-        url: "http://localhost:8080/api/user/new",
-        //url: "http://129.151.98.9:8080/api/user/new",
+        // url: "http://localhost:8080/api/user/new",
+        url: "http://129.151.98.9:8080/api/user/new",
         type: "POST",
         contentType: "application/json; charset=utf-8",
         dataType: "JSON",
@@ -119,8 +128,8 @@ function registrarNuevoUsuario() {
         statusCode: {
             201: function (respuesta) {
                 alert("Cuenta creada de forma correcta");
-                window.location.href = "http://localhost:8080/index.html";
-                //window.location.href = "http://129.151.98.9:8080/index.html";
+                // window.location.href = "/index.html";
+                window.location.href = "http://129.151.98.9:8080/index.html";
             }
         }, error: function (jqXHR, textStatus, errorThrown) {
             console.log(myData);
@@ -163,8 +172,8 @@ function validarCampos() {
 function valEmail() {
     let respuesta = new XMLHttpRequest();
     let emailUser = $("#emailUser").val();
-    let url = 'http://localhost:8080/api/user/' + emailUser;
-    /* let url = 'http://129.151.98.9:8080/api/user/' + emailUser; */
+    // let url = 'http://localhost:8080/api/user/' + emailUser;
+    let url = 'http://129.151.98.9:8080/api/user/' + emailUser;
     respuesta.open('GET', url);
     respuesta.onreadystatechange = function () {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
@@ -184,15 +193,15 @@ function valEmailPassw() {
     let respuesta = new XMLHttpRequest();
     let emailUser = $("#emailUser").val();
     let passw = $("#password").val();
-    let url = 'http://localhost:8080/api/user/' + emailUser + "/" + passw;
-    /* let url = 'http://129.151.98.9:8080/api/user/' + emailUser + "/" + passw; */
+    // let url = 'http://localhost:8080/api/user/' + emailUser + "/" + passw;
+    let url = 'http://129.151.98.9:8080/api/user/' + emailUser + "/" + passw;
     respuesta.open('GET', url);
 
     respuesta.onreadystatechange = function () {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             let respuestaJson = JSON.parse(this.responseText);
             console.log(respuestaJson["name"]);
-            if (respuestaJson["name"] != "NO DEFINIDO") {
+            if (respuestaJson["name"] != null) {
                 alert("No fue posible crear la cuenta");
             } else {
                 alert("No existe un usuario");

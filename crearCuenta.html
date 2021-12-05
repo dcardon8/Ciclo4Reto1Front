@@ -21,89 +21,99 @@
 </head>
 
 <body>
-    <h1> 
-        <img class="Logo" src="ALTO TUMERQUE.png" alt="Logo"> Alto Turmequé LTDA <img class="Logo" src="ALTO TUMERQUE.png" alt="Logo"> 
+    <h1>
+        <img class="Logo" src="ALTO TUMERQUE.png" alt="Logo"> Alto Turmequé LTDA <img class="Logo"
+            src="ALTO TUMERQUE.png" alt="Logo">
     </h1>
 
     <p class="SubtFunction">Crear Cuenta</p>
 
     <div class="autenticar">
-        <table>
-            <tr>
-                <td><label for="Nombre">Nombre</label></td>
-                <td><input type="text" name="Nombre" id="nameNewUser" class="form-control" required></td>
-            </tr>
-            <tr>
-                <td><label for="identification">Identificación</label></td>
-                <td><input type="text" name="identification" id="identification" class="form-control" required></td>
-            </tr>
-            <tr>
-                <td><label for="UserAddress">Dirección</label></td>
-                <td><input type="text" name="UserAddress" id="UserAddress" class="form-control" required></td>
-            </tr>
-            <tr>
-                <td><label for="cellPhone">Celular</label></td>
-                <td><input type="tel" name="cellPhone" id="cellPhone" class="form-control" pattern="[0-9]{10}" maxlength="10"  placeholder="ex: 1234567890" required></td>
-            </tr>
-            <tr>
-                <td><label for="Email">E-mail</label></td>
-                <td><input type="email" name="Email" id="emailNewUser" class="form-control" required></td>
-            </tr>
-            <tr>
-                <td><label for="Zona">Zona</label></td>
-                <td><input type="text" name="Zona" id="Zona" class="form-control" list="ZonasTurmeque" required></td>
-                <datalist id="ZonasTurmeque">
-                    <option value="ZONA 1"></option>
-                    <option value="ZONA 2"></option>
-                    <option value="ZONA 3"></option>
-                    <option value="ZONA 4"></option>
-                    <option value="ZONA 5"></option>
-                    <option value="ZONA 6"></option>
-                    <option value="ZONA 7"></option>
-                    <option value="ZONA 8"></option>
-                    <option value="ZONA 9"></option>
-                    <option value="ZONA 10"></option>
-                    <option value="ZONA 11"></option>
-                    <option value="ZONA 12"></option>
-                    <option value="ZONA 13"></option>
-                    <option value="ZONA 14"></option>
-                    <option value="ZONA 15"></option>
-                    <option value="ZONA 16"></option>
-                    <option value="ZONA 17"></option>
-                </datalist>
-            </tr>
-            <tr>
-                <td><label for="Rol">Tipo o Rol</label></td>
-                <td><input type="text" name="Rol" id="Rol" class="form-control" list="RolList" required></td>
-                <datalist id="RolList">
-                    <option value="COORD">Coordinador</option>
-                    <option value="ASE">Asesor Comercial</option>
-                    <!-- <option value="ADM">Administrador</option> COMO VOY A DARLE LA OPCION DE SER ADM NOOO -->
-                </datalist>
-            </tr>
+        <form action="" method="post"> <!<!-- action="index.html" method="post" class="form" -->
+            <table>
+                <tr>
+                    <td><label for="IdUser">ID</label></td>
+                    <td><input type="text" name="IdUser" id="IdUser" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Nombre">Nombre</label></td>
+                    <td><input type="text" name="Nombre" id="nameNewUser" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td><label for="identification">Identificación</label></td>
+                    <td><input type="text" name="identification" id="identification" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td><label for="UserAddress">Dirección</label></td>
+                    <td><input type="text" name="UserAddress" id="UserAddress" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td><label for="cellPhone">Celular</label></td>
+                    <td><input type="tel" name="cellPhone" id="cellPhone" class="form-control" pattern="[0-9]{10}"
+                            maxlength="10" placeholder="ex: 1234567890" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Email">E-mail</label></td>
+                    <td><input type="email" name="Email" id="emailNewUser" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Zona">Zona</label></td>
+                    <td><input type="text" name="Zona" id="Zona" class="form-control" list="ZonasTurmeque" required>
+                    </td>
+                    <datalist id="ZonasTurmeque">
+                        <option value="ZONA 1"></option>
+                        <option value="ZONA 2"></option>
+                        <option value="ZONA 3"></option>
+                        <option value="ZONA 4"></option>
+                        <option value="ZONA 5"></option>
+                        <option value="ZONA 6"></option>
+                        <option value="ZONA 7"></option>
+                        <option value="ZONA 8"></option>
+                        <option value="ZONA 9"></option>
+                        <option value="ZONA 10"></option>
+                        <option value="ZONA 11"></option>
+                        <option value="ZONA 12"></option>
+                        <option value="ZONA 13"></option>
+                        <option value="ZONA 14"></option>
+                        <option value="ZONA 15"></option>
+                        <option value="ZONA 16"></option>
+                        <option value="ZONA 17"></option>
+                    </datalist>
+                </tr>
+                <tr>
+                    <td><label for="Rol">Tipo o Rol</label></td>
+                    <td><input type="text" name="Rol" id="Rol" class="form-control" list="RolList" required></td>
+                    <datalist id="RolList">
+                        <option value="COORD">Coordinador</option>
+                        <option value="ASE">Asesor Comercial</option>
+                    </datalist>
+                </tr>
 
-            <tr>
-                <td><label for="Password">Contraseña</label></td>
-                <td><input type="password" id="contraNuevo1" pattern=".{6,}" class="form-control" required></td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p id="alertContra">La contraseña debe tener mínimo 6 caracteres</p>
-                </td>
-            </tr>
-            <tr>
-                <td><label for="confirmPassword">Confirmar tu contraseña</label></td>
-                <td><input type="password" id="contraNuevo2" class="form-control" pattern=".{6,}" required></td>
-            </tr>
-        </table>
-        <br>
-        <div class="Center">
-            <button class="registerButtons" onclick="registrarNuevoUsuario()">Crear</button>
-        </div>
+                <tr>
+                    <td><label for="Password">Contraseña</label></td>
+                    <td><input type="password" id="contraNuevo1" pattern=".{6,}" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p id="alertContra">La contraseña debe tener mínimo 6 caracteres</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="confirmPassword">Confirmar tu contraseña</label></td>
+                    <td><input type="password" id="contraNuevo2" class="form-control" pattern=".{6,}" required></td>
+                </tr>
+            </table>
+            <br>
+            <div class="Center">
+                <button type="submit" class="registerButtons" onclick="registrarNuevoUsuario()">Crear</button>
+            </div>
+        </form>
 
         <p class="textRedirect">¿ya tienes una cuenta?<a href="index.html">Inicia sesión aquí</a></p>
 
     </div>
 </body>
+
+
 
 </html>
